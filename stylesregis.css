@@ -1,149 +1,165 @@
 /* ====== ESTILOS GENERALES ====== */
+*{ box-sizing:border-box; }
 
 body{
-    margin:0;
-    padding:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f5f7fa;
+  margin:0;
+  padding:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f5f7fa;
 }
 
 /* contenedor general centrado */
 .pet-wrapper{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:18px 14px 26px; /* ayuda en móvil */
 }
 
 /* contenedor principal */
 .pet-container{
-    width:100%;
-    max-width:420px;
-    text-align:center;
-    position:relative;
-    padding:20px;
+  width:100%;
+  max-width:420px;
+  text-align:center;
+  position:relative;
+  padding:0;              /* mejor: que la card sea la que tenga padding */
 }
 
 /* ===== BOTON REGRESAR ===== */
-
 .back-btn{
-    position:absolute;
-    left:10px;
-    top:10px;
-    font-size:24px;
-    text-decoration:none;
-    color:#000;
-    background:white;
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    box-shadow:0 2px 6px rgba(0,0,0,0.15);
-    transition:0.2s;
+  position:absolute;
+  left:0;
+  top:0;
+  font-size:22px;
+  text-decoration:none;
+  color:#000;
+  background:white;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 8px 18px rgba(0,0,0,0.12);
+  transition:0.2s;
 }
 
 .back-btn:hover{
-    background:#eaeaea;
+  background:#eaeaea;
 }
 
 /* ===== TITULO ===== */
-
 .title{
-    font-size:24px;
-    font-weight:bold;
-    margin-bottom:20px;
+  font-size:30px;
+  font-weight:800;
+  margin:14px 0 18px;
 }
 
 /* ===== TARJETA AZUL ===== */
-
 .pet-card{
-    background:#59d3ff;
-    padding:30px 25px 40px;
-    border-radius:40px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  background:#59d3ff;
+  padding:22px 18px 22px;      /* más cómodo en móvil */
+  border-radius:28px;          /* más moderno */
+  box-shadow:0 18px 35px rgba(0,0,0,0.14);
 }
 
 /* ===== FOTO ===== */
+.photo-upload{
+  display:flex;                /* avatar + botón en fila */
+  align-items:center;
+  gap:14px;
+  margin-bottom:12px;
+}
 
 .photo-upload img{
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    background:white;
-    padding:8px;
-    object-fit:cover;
+  width:92px;
+  height:92px;
+  border-radius:50%;
+  background:white;
+  padding:8px;
+  object-fit:cover;
+  flex:0 0 auto;
 }
 
 .photo-upload button{
-    margin-top:10px;
-    border:none;
-    background:white;
-    padding:8px 18px;
-    border-radius:20px;
-    cursor:pointer;
-    font-size:13px;
+  margin-top:0;                /* ya no va abajo */
+  margin-left:auto;            /* empuja el botón a la derecha */
+  border:none;
+  background:white;
+  padding:12px 18px;
+  border-radius:999px;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:700;
+  color:#0a7fb8;
+  box-shadow:0 10px 18px rgba(0,0,0,0.12);
 }
 
 /* ===== INPUTS ===== */
-
 .pet-card input{
-    width:100%;
-    padding:14px 18px;
-    margin-top:15px;
-    border-radius:25px;
-    border:none;
-    outline:none;
-    font-size:14px;
+  width:100%;
+  padding:15px 18px;
+  margin-top:14px;
+  border-radius:999px;
+  border:none;
+  outline:none;
+  font-size:16px;
+  background:rgba(255,255,255,0.95);
 }
 
 /* ===== BOTON REGISTRAR ===== */
-
 .register-btn{
-    margin-top:25px;
-    padding:12px 35px;
-    border-radius:8px;
-    border:1px solid #999;
-    background:#eaeaea;
-    cursor:pointer;
-    font-size:14px;
-    transition:0.2s;
+  margin-top:18px;
+  width:100%;                 /* full width */
+  height:54px;
+  border-radius:14px;
+  border:2px solid rgba(0,0,0,0.25);
+  background:#efefef;
+  cursor:pointer;
+  font-size:18px;
+  font-weight:800;
+  color:#1e78ff;
+  transition:0.2s;
 }
 
 .register-btn:hover{
-    background:#dcdcdc;
+  background:#e6e6e6;
 }
 
 /* ===== RESPONSIVE PARA WEB ===== */
-
 @media (min-width:768px){
 
-.pet-container{
+  .pet-wrapper{
+    padding:28px 18px 36px;
+  }
+
+  .pet-container{
     max-width:600px;
-}
+  }
 
-.title{
-    font-size:28px;
-}
+  .title{
+    font-size:34px;
+    margin-bottom:20px;
+  }
 
-.pet-card{
-    padding:40px 60px;
-}
+  .pet-card{
+    padding:34px 46px 30px;
+    border-radius:34px;
+  }
 
-.pet-card input{
+  .pet-card input{
     font-size:16px;
     padding:16px 22px;
-}
+  }
 
-.photo-upload img{
+  .photo-upload img{
     width:120px;
     height:120px;
-}
+  }
 
-.register-btn{
-    font-size:16px;
-    padding:14px 45px;
-}
-
+  .register-btn{
+    font-size:18px;
+    height:56px;
+  }
 }
